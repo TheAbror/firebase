@@ -35,6 +35,7 @@ dependencies:
   firebase_auth: ^5.1.4
   firebase_core: 
   google_fonts:
+  cloud_firestore:
 
 dev_dependencies:
   flutter_test:

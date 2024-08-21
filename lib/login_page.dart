@@ -1,3 +1,4 @@
+import 'package:firebase_app/forgot_password_page.dart';
 import 'package:firebase_app/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -73,7 +74,29 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return const ForgotPasswordPage();
+                        },
+                      ));
+                    },
+                    child: Text(
+                      'Forgot password?',
+                      style: TextStyle(color: Colors.blue.shade900),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
             GestureDetector(
               onTap: () => signIn(),
               child: Container(
