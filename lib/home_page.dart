@@ -16,16 +16,21 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Singed in as:'),
+                const Text('Singed in as : '),
                 Text(user?.email ?? ''),
               ],
             ),
-            MaterialButton(onPressed: () {
-              FirebaseAuth.instance.signOut();
-            })
+            MaterialButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+              },
+              child: Text('Log out'),
+            ),
           ],
         ),
       ),
